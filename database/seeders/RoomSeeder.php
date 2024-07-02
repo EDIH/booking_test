@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class RoomsSeeder extends Seeder
+class RoomSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -27,7 +27,7 @@ class RoomsSeeder extends Seeder
 
         foreach ($seeds as $seed) {
             DB::table('rooms')
-                ->insert($seed  );
+                ->insert($seed);
         }
     }
 }
