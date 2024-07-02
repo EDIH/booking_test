@@ -23,4 +23,4 @@ Route::get("/test", function () {
     return 'some!';
 });
 
-Route::apiResource('/search', RoomController::class);
+Route::get('/search', [RoomController::class, 'search']);
