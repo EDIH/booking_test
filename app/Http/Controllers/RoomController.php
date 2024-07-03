@@ -6,9 +6,21 @@ use App\Models\Room;
 //use Illuminate\Database\Eloquent\Casts\Json;
 //use Illuminate\Http\Request;
 use App\Http\Requests\RoomSearchRequest;
+use App\Repositories\RoomRepository;
 
 class RoomController extends Controller
 {
+
+    public function __construct(
+        protected RoomRepository $roomRepository,
+    ) {}
+
+    public function search(RoomSearchRequest $request)
+    {
+        $rooms = $this->roomRepository->search(collect($request->validated()));
+
+        return $rooms;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -48,8 +60,4 @@ class RoomController extends Controller
 //    {
 //        //
 //    }
-    public function search(RoomSearchRequest $request)
-    {
-        return Room::all();
-    }
 }
