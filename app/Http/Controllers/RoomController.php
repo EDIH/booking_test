@@ -17,9 +17,7 @@ class RoomController extends Controller
 
     public function search(RoomSearchRequest $request)
     {
-        $rooms = $this->roomRepository->search(collect($request->validated()));
-
-        return $rooms;
+        return $this->roomRepository->search(collect($request->validated()));
     }
     /**
      * Display a listing of the resource.
