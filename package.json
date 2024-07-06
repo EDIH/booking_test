@@ -8,11 +8,13 @@
     "devDependencies": {
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0.0",
+        "sass": "^1.77.6",
         "vite": "^5.0.0"
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^5.0.5",
         "element-plus": "^2.7.6",
+        "vform3-builds": "^3.0.10",
         "vue": "^3.4.31",
         "vue-router": "^4.4.0"
     }
