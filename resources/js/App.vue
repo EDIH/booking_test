@@ -43,6 +43,9 @@ https://www.vform666.com
                 </el-form-item>
             </el-col>
             <el-col :span="16" class="grid-cell">
+                <pre v-for="room in roomsList">
+                    {{ room }}
+                </pre>
             </el-col>
         </el-row>
     </el-form>
@@ -54,7 +57,9 @@ import {
     defineComponent,
     toRefs,
     reactive,
-    getCurrentInstance, watch
+    getCurrentInstance,
+    watch,
+    ref
 }
     from 'vue'
 import axios from "axios";
@@ -75,6 +80,7 @@ export default defineComponent({
             rules: {},
         })
         const instance = getCurrentInstance()
+        const roomsList = ref(null)
         const submitForm = () => {
             instance.proxy.$refs['vForm'].validate(valid => {
                 if (!valid) return
@@ -82,7 +88,7 @@ export default defineComponent({
         }
         const getRooms = async (newValue) => {
             try {
-                console.log(await axios.get("/api/search"))
+                roomsList.value = await axios.get("/api/search")
                 // response.value = await axios.get("/api/search");
             } catch (error) {
                 // Do something with the error
