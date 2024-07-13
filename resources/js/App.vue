@@ -54,9 +54,10 @@ import {
     defineComponent,
     toRefs,
     reactive,
-    getCurrentInstance
+    getCurrentInstance, watch
 }
     from 'vue'
+import axios from "axios";
 
 export default defineComponent({
     components: {},
@@ -79,9 +80,22 @@ export default defineComponent({
                 if (!valid) return
             })
         }
+        const getRooms = async (newValue) => {
+            try {
+                console.log(await axios.get("/api/search"))
+                // response.value = await axios.get("/api/search");
+            } catch (error) {
+                // Do something with the error
+                console.log(error);
+            }
+        };
         const resetForm = () => {
             instance.proxy.$refs['vForm'].resetFields()
         }
+        watch(state, function (o,n) {
+            getRooms(n)
+            // console.log(n.formData)
+        })
         return {
             ...toRefs(state),
             submitForm,
@@ -89,7 +103,7 @@ export default defineComponent({
         }
     }
 })
-
+// watch()
 </script>
 
 <style lang="scss">
