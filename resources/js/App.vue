@@ -86,8 +86,11 @@ export default defineComponent({
                 if (!valid) return
             })
         }
-        const getRooms = async (newValue) => {
+        const getRooms = async (filter) => {
             try {
+                let params = new URLSearchParams(filter);
+                // params.append()
+                console.log(params.toString())
                 roomsList.value = await axios.get("/api/search")
                 // response.value = await axios.get("/api/search");
             } catch (error) {
@@ -99,7 +102,7 @@ export default defineComponent({
             instance.proxy.$refs['vForm'].resetFields()
         }
         watch(state, function (o,n) {
-            getRooms(n)
+            getRooms(n.formData)
             // console.log(n.formData)
         })
         return {
