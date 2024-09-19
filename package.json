@@ -13,9 +13,11 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^5.0.5",
+        "@vueuse/sound": "^2.0.1",
         "element-plus": "^2.7.6",
         "vform3-builds": "^3.0.10",
         "vue": "^3.4.31",
+        "vue-konva": "^3.1.0",
         "vue-router": "^4.4.0"
     }
 }

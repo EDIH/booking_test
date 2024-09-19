@@ -1,0 +1,30 @@
+{
+    "name": "Some",
+    "colors": {
+        "red"   : "FF0000",
+        "green" : "00FF00",
+        "blue"  : "0000FF"
+    },
+    "raports" : {
+        "main" : {
+            "content" : [
+                {"id": 1, "color" : "white",   "count" : 1, "isActive": true},
+                {"id": 2, "color" : "white",   "count" : 20, "isActive": false},
+                {"id": 3, "color" : "blue",  "count" : 1, "isActive": false},
+                {"id": 4, "color" : "red",   "count" : 3, "isActive": false},
+                {"id": 5, "color" : "blue",  "count" : 1, "isActive": false},
+                {"id": 6, "color" : "red",   "count" : 4, "isActive": false},
+                {"id": 7, "color" : "red",   "count" : 20, "isActive": false},
+                {"id": 8, "color" : "green", "count" : 3, "isActive": false},
+                {"id": 9, "color" : "red",   "count" : 5, "isActive": false},
+                {"id": 10, "color" : "red",   "count" : 20, "isActive": false},
+                {"id": 11, "color" : "green", "count" : 3, "isActive": false},
+                {"id": 12, "color" : "red",   "count" : 20, "isActive": false},
+                {"id": 13, "color" : "green", "count" : 2, "isActive": false}
+            ]
+        }
+    },
+    "config": {
+        "raport_repeat" : 20
+    }
+  }
